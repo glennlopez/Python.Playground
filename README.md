@@ -14,6 +14,7 @@ This is where I keep all the fun things I do with python. Anything from applying
 * https://www.learnstreet.com/lessons/python/
 * http://www.learnpython.org/
 * https://developers.google.com/edu/python/
+* https://www.youtube.com/user/TPayneExperience/playlists?view=50&sort=dd&shelf_id=2
 
 
 ### Recomended Downloads
