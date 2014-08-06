@@ -7,7 +7,8 @@ def cmd(cmd):
 	os.system(cmd)
 
 cmd('clear')
-comment = raw_input("Type Comment: ")				
+print 'Updating...'
+comment = raw_input("Type git-commit comment: ")				
 cmd('git add *')			
 cmd('git status')
 cmd('git diff')
