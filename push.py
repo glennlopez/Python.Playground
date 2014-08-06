@@ -2,6 +2,7 @@
 import subprocess
 import os 
 
+# use these for coloring your text
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -15,13 +16,12 @@ def cmd(cmd):
 	os.system(cmd)
 
 cmd('clear')
-print 'Pushing commits to Github...'
-comment = raw_input("Type git-commit comment: ")				
+print bcolors.OKGREEN + "Github Update Script" + bcolors.ENDC
+comment = raw_input("Type your update comment: ")				
 cmd('git add *')			
 cmd('git status')
 cmd('git diff')
 cmd("git commit -m '"+comment+"'")
 cmd('git push')
 print 
-cmd('echo Push Script Complete!')
-print bcolors.WARNING + "Warning: No active frommets remain. Continue?" + bcolors.ENDC
+print bcolors.WARNING + "Update Complete!" + bcolors.ENDC
