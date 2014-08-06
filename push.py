@@ -29,5 +29,6 @@ cmd('git add -u') 	#updated deleted files
 cmd('git status')	#displays changes to be pushed to github
 cmd("git commit -m '"+comment+"'")
 cmd('git push')		#push changes to github
+cmd('ssh-add -D')	#removes identities
 print 
 print colors.YELLOW + "Update Complete!" + colors.WHITE
