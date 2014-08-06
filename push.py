@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 '''
-This script assumes that you have generated and setup the SSH Keys
-for this repository. Visit - https://help.github.com/articles/generating-ssh-keys
+This script assumes that you have generated and setup the SSH Keys.
+Visit - https://help.github.com/articles/generating-ssh-keys
 if you have not.
 	- glennlopez
 '''
