@@ -13,11 +13,14 @@ class colors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-
+# CMD FUNCTION - for running shell scripts 
 def cmd(cmd):
 	os.system(cmd)
 
-# commands to excecute 
+
+#
+# COMMANDS TO EXECUTE
+# 
 cmd('clear')
 print colors.BOLD + "Github Update Script" + colors.WHITE
 comment = raw_input(colors.GREEN + "Type your update comment: " + colors.WHITE)				

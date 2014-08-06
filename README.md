@@ -16,6 +16,12 @@ This is where I keep all the fun things I do with python. Anything from applying
 * https://developers.google.com/edu/python/
 * https://www.youtube.com/user/TPayneExperience/playlists?view=50&sort=dd&shelf_id=2
 
+### Folder Structure
+
+| Folder Name        | Description           |
+| ------------- |:--------------------:| 
+| CALCULATORS     | hosts all calculations scripts | 
+| push.py      | python script that automates git commits on linux side | 
 
 ### Recomended Downloads
 * https://www.python.org/download/
