@@ -6,8 +6,8 @@ import os
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
     FAIL = '\033[91m'
     ENDC = '\033[0m'
     BOLD = '\033[1m'
@@ -20,11 +20,11 @@ def cmd(cmd):
 # commands to excecute 
 cmd('clear')
 print bcolors.BOLD + "Github Update Script" + bcolors.ENDC
-comment = raw_input(bcolors.OKGREEN + "Type your update comment: " + bcolors.ENDC)				
-cmd('git add *')
-cmd('git add -u')			
-cmd('git status')
+comment = raw_input(bcolors.GREEN + "Type your update comment: " + bcolors.ENDC)				
+cmd('git add *') 	#updates changes made inside files
+cmd('git add -u') 	#updated deleted files			
+cmd('git status')	#displays changes to be pushed to github
 cmd("git commit -m '"+comment+"'")
 cmd('git push')
 print 
-print bcolors.WARNING + "Update Complete!" + bcolors.ENDC
+print bcolors.YELLOW + "Update Complete!" + bcolors.ENDC
