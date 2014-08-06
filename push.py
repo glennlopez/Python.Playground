@@ -17,6 +17,7 @@ class bcolors:
 def cmd(cmd):
 	os.system(cmd)
 
+# commands to excecute 
 cmd('clear')
 print bcolors.BOLD + "Github Update Script" + bcolors.ENDC
 comment = raw_input(bcolors.OKGREEN + "Type your update comment: " + bcolors.ENDC)				
