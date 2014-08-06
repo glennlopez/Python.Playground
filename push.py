@@ -10,14 +10,16 @@ class bcolors:
     WARNING = '\033[93m'
     FAIL = '\033[91m'
     ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
 
 def cmd(cmd):
 	os.system(cmd)
 
 cmd('clear')
-print bcolors.OKGREEN + "Github Update Script" + bcolors.ENDC
-comment = raw_input("Type your update comment: ")				
+print bcolors.BOLD + "Github Update Script" + bcolors.ENDC
+comment = raw_input(bcolors.OKGREEN + "Type your update comment: " + bcolors.ENDC)				
 cmd('git add *')			
 cmd('git status')
 cmd('git diff')
