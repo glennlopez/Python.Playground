@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 '''
-This assumes that 
+This script assumes that you have generated and setup the SSH Keys
+for this repository. Visit - https://help.github.com/articles/generating-ssh-keys
+if you have not.
+	- glennlopez
 '''
 import subprocess
 import os 
@@ -21,9 +24,9 @@ def cmd(cmd):
 	os.system(cmd)
 
 
-#
+##########################
 # COMMANDS TO EXECUTE
-# 
+##########################
 cmd('clear')
 print colors.BOLD + "Github Update Script" + colors.WHITE
 comment = raw_input(colors.GREEN + "Type your update comment: " + colors.WHITE)				
