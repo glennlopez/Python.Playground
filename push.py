@@ -14,4 +14,4 @@ cmd('git diff')
 cmd("git commit -m '"+comment+"'")
 cmd('git push')
 print 
-cmd('\e[0;31mecho Push Script Complete!\e[0m')
+cmd('echo -e "\e[0;31mPush Script Complete!\e[0m"')
