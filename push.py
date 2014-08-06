@@ -2,6 +2,9 @@
 import subprocess
 import os 
 
+red='\e[0;31m'
+NC='\e[0m' # No Color
+
 def cmd(cmd):
 	os.system(cmd)
 
@@ -13,4 +16,4 @@ cmd('git diff')
 cmd("git commit -m '"+comment+"'")
 cmd('git push')
 print 
-cmd('echo Push Script Complete!')
+cmd('${red}echo Push Script Complete!${NC}')
