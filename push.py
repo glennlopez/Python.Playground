@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+'''
+This assumes that 
+'''
 import subprocess
 import os 
 
