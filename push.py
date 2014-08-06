@@ -6,12 +6,12 @@ import os
 def cmd(cmd):
 	os.system(cmd)
 
-comment = raw_input("Type Comment: ")
-cmd('clear')				
+cmd('clear')
+comment = raw_input("Type Comment: ")				
 cmd('git add *')			
 cmd('git status')
 cmd('git diff')
 cmd("git commit -m '"+comment+"'")
 cmd('git push')
 print 
-cmd('echo -e "\e[0;31mPush Script Complete!"')
+cmd('echo "\e[0;31mPush Script Complete!"')
