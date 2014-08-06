@@ -21,7 +21,8 @@ def cmd(cmd):
 cmd('clear')
 print bcolors.BOLD + "Github Update Script" + bcolors.ENDC
 comment = raw_input(bcolors.OKGREEN + "Type your update comment: " + bcolors.ENDC)				
-cmd('git add *')			
+cmd('git add *')
+cmd('git add -u')			
 cmd('git status')
 cmd("git commit -m '"+comment+"'")
 cmd('git push')
