@@ -18,11 +18,12 @@ garb = {
     "tests": [100.0, 100.0]
 }
 
+# FUNCTION - Course  Weight
 hmw = 0.1
 qzz = 0.3
 tst = 0.6
 
-# Add your function below!
+# FUNCTION - Average Calculation
 def average(numbers):
     total = sum(numbers)
     total = float(total)
@@ -48,7 +49,8 @@ def get_letter_grade(score):
     else:
         return 'F'
 
-def get_class_average(classes):
+# FUNCTION - Overall Course Standing
+def get_course_standing(classes):
     results = []
     for subject in classes:
         results.append(get_average(subject))
@@ -56,7 +58,7 @@ def get_class_average(classes):
 
 #debug script
 classes = semi,
-classes = get_class_average(classes)
+classes = get_course_standing(classes)
 classes = int(classes)
 print classes
 
