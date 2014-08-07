@@ -1,35 +1,40 @@
 #!/usr/bin/env python
-
-#SUBJECT DATABASE
-compsci = {
-    "name": "Computer Science",
+semi = {
+    "name": "Semiconductor",
     "homework": [90.0, 97.0, 75.0, 92.0],
     "quizzes": [88.0, 40.0, 94.0],
     "tests": [75.0, 90.0]
 }
+phys = {
+    "name": "Physics",
+    "homework": [100.0, 92.0, 98.0, 100.0],
+    "quizzes": [82.0, 83.0, 91.0],
+    "tests": [89.0, 97.0]
+}
+garb = {
+    "name": "Garbage",
+    "homework": [0.0, 87.0, 75.0, 22.0],
+    "quizzes": [0.0, 75.0, 78.0],
+    "tests": [100.0, 100.0]
+}
 
-#SUBJECT WIEGHT
 hmw = 0.1
 qzz = 0.3
 tst = 0.6
 
-
-#FUNCTION - Average
+# Add your function below!
 def average(numbers):
     total = sum(numbers)
     total = float(total)
     total = total/len(numbers)
     return total
-
-#FUNCTION - Wieghed Average    
+    
 def get_average(subject):
     homework = average(subject["homework"])
     quizzes = average(subject["quizzes"])
     tests = average(subject["tests"])
     return homework*hmw + quizzes*qzz + tests*tst
-
-'''
-#FUNCTION - letter grade    
+    
 def get_letter_grade(score):
     score = int(score)
     if score >= 90:
@@ -42,20 +47,18 @@ def get_letter_grade(score):
         return 'D'
     else:
         return 'F'
-'''
 
-#FUNCTION - Overall average standing
-def get_overall_average(subjects):
+def get_class_average(classes):
     results = []
-    for subject in subjects:
+    for subject in classes:
         results.append(get_average(subject))
     return average(results)
 
-#OUTPUT
-subjects = compsci
-subjects = get_overall_average(subjects)
-subjects = int(subjects)
-print subjects
+#debug script
+classes = semi,
+classes = get_class_average(classes)
+classes = int(classes)
+print classes
 
     
     
