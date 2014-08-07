@@ -37,4 +37,4 @@ cmd("git commit -m '"+comment+"'")
 cmd('git push')		#push changes to github
 cmd('ssh-add -D')	#removes identities - requires password after commit
 print 
-print colors.YELLOW + "Update Complete!" + colors.WHITE
+print colors.YELLOW + "Update Complete!!" + colors.WHITE
