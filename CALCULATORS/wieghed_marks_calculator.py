@@ -26,7 +26,7 @@ def get_average(subject):
     homework = average(subject["homework"])
     quizzes = average(subject["quizzes"])
     tests = average(subject["tests"])
-    return homework*hmw + quizzes*0.3 + tests*0.6
+    return homework*hmw + quizzes*qzz + tests*tst
 
 '''
 #FUNCTION - letter grade    
@@ -44,15 +44,16 @@ def get_letter_grade(score):
         return 'F'
 '''
 
-def get_class_average(subjects):
+#FUNCTION - Overall average standing
+def get_overall_average(subjects):
     results = []
     for subject in subjects:
         results.append(get_average(subject))
     return average(results)
 
-#debug script
-subjects = alice, tyler, lloyd
-subjects = get_class_average(subjects)
+#OUTPUT
+subjects = compsci
+subjects = get_overall_average(subjects)
 subjects = int(subjects)
 print subjects
 
