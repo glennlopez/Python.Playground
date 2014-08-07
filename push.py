@@ -8,7 +8,7 @@ if you have not.
 import subprocess
 import os 
 
-# text coloring format
+# Colors the text
 class colors:
     PURPL = '\033[95m'
     BLUE = '\033[94m'
