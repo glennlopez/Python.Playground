@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 '''
-This convers textfiles into a workable database list. 
+This converts textfiles into a workable database list. 
 Do not change anything unless you are adding a new library.
 '''
 
