@@ -25,3 +25,11 @@ with open('homework.txt') as inputfile:
 	for nums in inputfile:
 		homework.append(nums)
 homework = map(int, nums.split(","))
+
+
+
+
+######### 
+subj_1 = {
+'tests' : tests, 'quizzes' : quizzes, 'homework' : homework
+}

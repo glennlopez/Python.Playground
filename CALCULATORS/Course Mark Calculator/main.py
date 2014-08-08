@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+from wght import *          # Mark Weight
+
 '''
 This holds the functions used in start.py. Add functions you would
 like to use here so other subjects can use the same file
