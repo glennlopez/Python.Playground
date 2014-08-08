@@ -38,11 +38,13 @@ print colors.BOLD + "Test Average: " + colors.WHITE + "%s (%s%%)" %(avg_tst, p_t
 print
 
 if avg_subj_1 <= 60:
-	print "Your Average for this subject so far is " + colors.RED + "%s" %(avg_subj_1)
+	print "Your Average for this subject so far is " + colors.RED + "%s%%" %(avg_subj_1)
 
 elif avg_subj_1 <= 79:
-	print "Your Average for this subject so far is " + colors.YELLOW + "%s" %(avg_subj_1)
+	print "Your Average for this subject so far is " + colors.YELLOW + "%s%%" %(avg_subj_1)
 
 else:
-	print "Your Average for this subject so far is " + colors.GREEN + "%s" %(avg_subj_1)
+	print "Your Average for this subject so far is " + colors.GREEN + "%s%%" %(avg_subj_1)
 
+#OUTPUT TO FILE
+#cmd('python start.py > out.txt')
