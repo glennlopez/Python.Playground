@@ -4,4 +4,6 @@ from main import *
 
 
 print tests
+print quizzes
+print homework
  
