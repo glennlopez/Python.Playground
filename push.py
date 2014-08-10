@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 '''
-This script assumes that you have generated and setup the SSH Keys.
+This script auto updates (pushes) all changes to github.
 Visit - https://help.github.com/articles/generating-ssh-keys
-if you have not.
+to setup your SSH keys.
 	- glennlopez
 '''
 import subprocess
