@@ -3,7 +3,6 @@
 This script auto updates (pushes) all changes to github.
 Visit - https://help.github.com/articles/generating-ssh-keys
 to setup your SSH keys.
-	- glennlopez
 '''
 import subprocess
 import os 
