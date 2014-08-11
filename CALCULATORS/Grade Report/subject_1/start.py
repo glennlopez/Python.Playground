@@ -31,7 +31,7 @@ p_qz = qzz_wght*100			# Current weight for quiz
 p_tst = tst_wght*100		# Current weight for test
 
 #OUTPUTS
-cmd('clear')
+#cmd('clear') #<--- ONLY HAVE THIS IF SINGLE
 print colors.BOLD + "Homework Average: " + colors.WHITE + "%s (%s%%)" %(avg_hmw, p_hmw)
 print colors.BOLD + "Quiz Average: " + colors.WHITE + "%s (%s%%)" %(avg_qzz, p_qz)
 print colors.BOLD + "Test Average: " + colors.WHITE + "%s (%s%%)" %(avg_tst, p_tst)

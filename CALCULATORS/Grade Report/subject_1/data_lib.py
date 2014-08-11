@@ -7,21 +7,21 @@ Do not change anything unless you are adding a new library.
 
 # TESTS LIBRARY
 tests = []
-with open('test.txt') as inputfile:
+with open('subject_1/test.txt') as inputfile:
 	for nums in inputfile:
 		tests.append(nums)
 tests = map(int, nums.split(","))
 
 # QUIZZES LIBRARY
 quizzes = []
-with open('quizzes.txt') as inputfile:
+with open('subject_1/quizzes.txt') as inputfile:
 	for nums in inputfile:
 		quizzes.append(nums)
 quizzes = map(int, nums.split(","))
 
 # HOMEWORK LIBRARY
 homework = []
-with open('homework.txt') as inputfile:
+with open('subject_1/homework.txt') as inputfile:
 	for nums in inputfile:
 		homework.append(nums)
 homework = map(int, nums.split(","))
