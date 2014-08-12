@@ -28,9 +28,9 @@ cmd('clear')
 
 # OUTPUT
 print (colors.BOLD + 'Grade Report' + colors.WHITE)
-print ('[1] Subject 1')
-print ('[2] Subject 2')
-print ('[3] Subject 3')
+print (colors.BLUE + '[1]' + colors.WHITE + ' Subject 1')
+print (colors.BLUE + '[2]' + colors.WHITE + ' Subject 2')
+print (colors.BLUE + '[3]' + colors.WHITE + ' Subject 3')
 print ('-----------------')
 print
 print 
