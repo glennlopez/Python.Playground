@@ -2,7 +2,11 @@
 import subprocess			# Subprocess for Shell CMD
 import os 					# OS Library
 
+
+################
 # COLOR LIBRARY
+################
+
 class colors:
     PURPL = '\033[95m'
     BLUE = '\033[94m'
@@ -17,7 +21,10 @@ def cmd(cmd):
 	os.system(cmd)
 
 
+##############
 # USER PROMPT
+##############
+
 print (colors.WHITE + '--------------')
 print
 print ('[1] Add marks for Homework')

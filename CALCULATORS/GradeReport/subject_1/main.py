@@ -5,23 +5,25 @@ from wght import *          # Used for displaying Marking Wieght
 This holds the functions used in start.py. Add functions you would
 like to use here so other subjects can use the same file
 '''
+################
+# FUNCTIONS
+################
 
-# FUNCTION - Mark Average Calculation
+# Mark Average Calculation
 def average(numbers):
     total = sum(numbers)
     total = float(total)
     total = total/len(numbers)
     return total
   
-# FUNCTION - Subject Average Calculation  
-#note: keep _wght isolated in subject folder (wieght changes per subject)
+# Subject Average Calculation  
 def get_average(subject):
     homework = average(subject["homework"])
     quizzes = average(subject["quizzes"])
     tests = average(subject["tests"])
     return homework*hmw_wght + quizzes*qzz_wght + tests*tst_wght
 
-# FUNCTION - Grade Letter Equivalent   
+# Grade Letter Equivalent   
 def get_letter_grade(score):
     score = int(score)
     if score >= 90:
@@ -35,7 +37,7 @@ def get_letter_grade(score):
     else:
         return 'F'
 
-# FUNCTION - Overall Course Standing
+# Overall Course Standing
 def get_course_standing(classes):
     results = []
     for subject in classes:
