@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from wght import *          # Mark Weight
+from wght import *          # Used for displaying Marking Wieght
 
 '''
 This holds the functions used in start.py. Add functions you would
