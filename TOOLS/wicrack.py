@@ -1583,13 +1583,13 @@ def banner(RUN_CONFIG):
     print W + "       |    . .-' `. '.             by: glennlopez"
     print W + "       :     .     .`.'"
     print W + "        \     `.  /  ..         ----------------------------------------"
-    print W + "         \      `.   ' .        This script will attempt to automate the "
-    print W + "          `,       `.   \       usual work required to crack password"
-    print W + "         ,|,`.        `-.\      protected wireless networks. "
+    print W + "         \      `.   ' .        WiCrack needs dependencies installed to "
+    print W + "          `,       `.   \       function correctly. Please run 'config.py'"
+    print W + "         ,|,`.        `-.\      if you are getting any errors."
     print W + "        '.||  ``-...__..-`      Use --help for useable script arguments"
     print W + "         |  |                   ----------------------------------------"
-    print W + "         |__|"
-    print W + "         /||\ "
+    print W + "         |__| "
+    print W + "         /||\               aircrack-ng * reaver * cowpatty * pyrit * tshark "
     print W + "        //||\\ "
     print W + "       // || \\ "
     print W + "    __//__||__\\__"
@@ -1701,10 +1701,14 @@ def help():
 # WIRELESS CARD FUNCTIONS #
 ###########################
 '''
+############# Disabled - WIP
+
+
+#def wcf_get(cap, target, verbose=False):
+    # Gather data from wireless card first
+    #try:
 
 '''
-
-
 
 ######################
 # SCANNING FUNCTIONS #
