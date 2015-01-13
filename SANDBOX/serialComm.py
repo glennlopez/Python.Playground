@@ -29,12 +29,12 @@ def cmd(cmd):
 
 # Pre-config routine & checks
 cmd("clear")
-print colors.BOLD + 'Open serial ports are:' + colors.WHITE
-cmd("dmesg | grep tty")
+print colors.BOLD + 'Serial Configuration:' + colors.WHITE
+cmd(colors.GREEN + "dmesg | grep tty" + colors.WHITE) 
 print ""
 
 # Port setting
-cmd("stty -F /dev/cu.usbserial-A700dYoR raw speed 9600")
+cmd("stty -F /dev/ttyUSB0 raw speed 115200")
 
 # Stuff to send
-cmd("echo 'Hello' > /dev/cu.usbserial-A700dYoR")
+cmd("echo 'Hello' > /dev/ttyUSB0")
