@@ -21,7 +21,11 @@ This is where I keep all the fun things I do with python. Anything from applying
 | Folder Name        | Description           |
 | ------------- |:--------------------:| 
 | CALCULATORS     | hosts all calculations scripts | 
+| TOOLS     | tools I made that are 'useful' to me | 
+| SANDBOX      | I put everything im testing here | 
 | push.py      | python script that automates git commits on linux side | 
+| pull.py      | python script that automates pulling diffs from github | 
+| status.py      | python script that checks log status of changes | 
 
 ### Recomended Downloads
 * https://www.python.org/download/
