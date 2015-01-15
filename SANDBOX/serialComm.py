@@ -38,5 +38,6 @@ cmd("stty -F /dev/ttyUSB0 raw speed 115200")
 
 # Stuff to send
 cmd("echo 'H' > /dev/ttyUSB0")
+cmd("echo 'z' > /dev/ttyUSB0")
 
 # Clean-up routine
