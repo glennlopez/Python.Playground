@@ -29,3 +29,4 @@ cmd('git pull') # comment this out if this doesnt work
 #cmd('git pull orgin master')		#pull changes from github
 print 
 print colors.YELLOW + "Pull Complete: Local directory updated!!" + colors.WHITE
+# end of script
