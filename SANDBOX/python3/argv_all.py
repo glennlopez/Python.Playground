@@ -22,3 +22,4 @@ for string in sys.argv:
 for s in sys.argv:
     for c in s:
         print(c)
+# testing...
