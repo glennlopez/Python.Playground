@@ -1,6 +1,6 @@
 ## Introduction to Python
 ### What I leaned:
-- Arithmetic Operations
+- Data Types & Operators
 
 ...
 
