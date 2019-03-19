@@ -15,3 +15,8 @@ list_of_random_stuff[2] = 2
 print(list_of_random_stuff[2])
 addthins3 = list_of_random_stuff[0] + list_of_random_stuff[2]
 print(addthins3)
+
+list_size = len(list_of_random_stuff)
+print("Size of list: {}".format(list_size))
+print("Last item: {}".format(list_of_random_stuff[list_size - 1]))
+print("Last item using -1: {}".format(list_of_random_stuff[-1]))
