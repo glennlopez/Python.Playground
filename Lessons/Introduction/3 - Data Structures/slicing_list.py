@@ -1,5 +1,6 @@
 """
 Select the three most recent dates from this list using list slicing notation. Hint: negative indexes work in slices!
+https://classroom.udacity.com/courses/ud1110/lessons/c06382b2-cb27-4aac-a2bd-eb754fd13914/concepts/201ed843-7285-4a46-807e-fd18f96cd7fe
 """
 
 eclipse_dates = ['June 21, 2001', 'December 4, 2002', 'November 23, 2003',
