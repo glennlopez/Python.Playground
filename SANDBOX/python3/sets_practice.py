@@ -19,3 +19,6 @@ print(my_name_set)
 
 sorted_set = sorted(my_name_set)
 print(sorted_set)
+
+my_name_set.pop()
+print(my_name_set)
