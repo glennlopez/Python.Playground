@@ -18,3 +18,19 @@ population = {
     "Karachi": 13.0,
     "Mumbai": 12.5
 }
+
+print("Russia" in population)
+
+try:
+    print(population["Russia"])
+except KeyError:
+    print("Russia not found!")
+
+print("Population: " + str(population))
+
+# get() method instead of population["Russia"]
+print(population.get("Russia"))
+
+# get() method with a default values
+print(population.get("Russia", "Russia does not exist!"))
+
