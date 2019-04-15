@@ -19,3 +19,10 @@ print("Is Science in the list:", "Science" in pandoraBox)
 
 #slicing list
 print("pandoraBox[2:3] - ", pandoraBox[2:3])
+print()
+
+#list mutation (mutability)
+print("Org:", pandoraBox)
+pandoraBox[1] = "Geography"
+print("New:", pandoraBox)
+
