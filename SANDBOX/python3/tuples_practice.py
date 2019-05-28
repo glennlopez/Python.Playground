@@ -16,3 +16,5 @@ print((tuple_sample_3))
 data = "glenn", 'l', 1987, 3, 24
 f_name, l_name, b_year, b_mo, b_day = data
 print(f_name)
+
+
