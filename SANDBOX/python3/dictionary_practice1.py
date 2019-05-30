@@ -24,4 +24,7 @@ for item in animal.keys():
     value = animal[item]
     print(item, "=", value)
 
+print()
 
+for item, value in animal.items():
+    print(item, "=", value)

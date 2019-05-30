@@ -11,15 +11,27 @@ elements = {'hydrogen': {'number': 1, 'weight': 1.00794, 'symbol': 'H'},
 
 # todo: Add an 'is_noble_gas' entry to the hydrogen and helium dictionaries
 # hint: helium is a noble gas, hydrogen isn't
-print()
-print(elements.items())
+
+for key, value in elements.items():
+    print(key, '=', value)
+
 print()
 
 # Notes: you can use either-or but its easier to use the latter.
 # Notice how python adds the 'key' in the element for you if it does not exist in the latter solution
-elements['hydrogen'] = {'number': 1, 'weight': 1.00794, 'symbol': 'H', 'is_noble_gas': False}
+
+elements['hydrogen'] = \
+        {
+            'number': 1,
+            'weight': 1.00794,
+            'symbol': 'H',
+            'is_noble_gas': False
+        }
+
 elements['helium']['is_noble_gas'] = True
 
 print()
-print(elements.items())
-print()
+
+for key, value in elements.items():
+    print(key, '=', value)
+
