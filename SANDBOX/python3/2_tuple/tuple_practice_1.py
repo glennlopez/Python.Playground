@@ -1,5 +1,6 @@
 # https://www.youtube.com/watch?v=NI26dqhs2Rk
 
+"""
 #empty tuple
 empty_tuple = ()
 print(empty_tuple)
@@ -17,4 +18,7 @@ data = "glenn", 'l', 1987, 3, 24
 f_name, l_name, b_year, b_mo, b_day = data
 print(f_name)
 
+"""
+
+# practice wave 2
 
