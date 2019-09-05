@@ -1,5 +1,5 @@
 # https://www.youtube.com/watch?v=NI26dqhs2Rk
-
+# https://classroom.udacity.com/courses/ud1110/lessons/c06382b2-cb27-4aac-a2bd-eb754fd13914/concepts/f811ad08-7771-485d-b925-c1d743c1209c
 """
 #empty tuple
 empty_tuple = ()
@@ -22,3 +22,5 @@ print(f_name)
 
 # practice wave 2
 
+from turtle import *
+color('red')
