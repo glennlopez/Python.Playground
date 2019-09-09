@@ -22,5 +22,3 @@ print(f_name)
 
 # practice wave 2
 
-from turtle import *
-color('red')
