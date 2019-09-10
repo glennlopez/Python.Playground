@@ -15,9 +15,6 @@ myDict["DOB"] = 1987
 myDict["Age"] = 2019 - myDict["DOB"]
 print(myDict)
 
-
-# person = {0: {"name": "Glenn", "year": 1987, "month": 3, "day": 24}}
-
 def get_data():
     name = input("What is your name: ")
     year = input("What year were you born: ")
