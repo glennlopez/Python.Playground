@@ -7,7 +7,7 @@ fruit_count, not_fruit_count = 0, 0
 basket_items = {'apples': 4, 'oranges': 19, 'kites': 3, 'sandwiches': 8}
 fruits = ['apples', 'oranges', 'pears', 'peaches', 'grapes', 'bananas']
 
-#Iterate through the dictionary
+# Iterate through the dictionary
 for item, count in basket_items.items():
     if item in fruits:
         fruit_count += count
