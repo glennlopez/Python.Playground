@@ -8,14 +8,16 @@ class UserData:
         self.reserved = reserved
         self.date = use_date
         self.comp = comp_name
-        self.start = start_time
-        self.end = end_time
-        self.total = total_time
+        self.start_time = start_time
+        self.end_time = end_time
+        self.total_time = total_time
 
         # sugar for data class
-        self.user = self.get_name()
         self.day = self.get_day(1)
         self.month = self.get_month(1)
+        self.start = self.get_start_time()
+        self.end = self.get_end_time()
+        self.total = self.get_total_time()
 
     def get_day(self, date_format=0):
         """
@@ -56,49 +58,66 @@ class UserData:
 
     def get_start_time(self, time=0):
         """
-        Converts start_time time<str> to hour<int>, min<int>, sec<int>
-        :param time: type of data to return (hour, min, sec)
-        :return: int
+        Converts start_time <str> to usable <int> format
+        :param time: type of time to return / all, hour, min, sec
+        :return: Tuple of <int> if 0, else <int>
         """
-        if time == 0 or time == 'h' or time == 'hh' or time == 'hrs' or time == 'hour' or time == 'hours':
-            return int(tuple(self.start.split(':'))[0])
-        if time == 1 or time == 'm' or time == 'mm' or time == 'min' or time == 'minute' or time == 'minutes':
-            return int(tuple(self.start.split(':'))[1])
-        if time == 2 or time == 's' or time == 'ss' or time == 'sec' or time == 'second' or time == 'seconds':
-            return int(tuple(self.start.split(':'))[2])
+        if time == 0:
+            return(int(tuple(self.start_time.split(':'))[0]), int(tuple(self.start_time.split(':'))[1]),
+                   int(tuple(self.start_time.split(':'))[2]))
+        # below is redundant due to tuple above but kept for legacy support
+        if time == 1 or time == 'h' or time == 'hh' or time == 'hrs' or time == 'hour' or time == 'hours':
+            return int(tuple(self.start_time.split(':'))[0])
+        if time == 2 or time == 'm' or time == 'mm' or time == 'min' or time == 'minute' or time == 'minutes':
+            return int(tuple(self.start_time.split(':'))[1])
+        if time == 3 or time == 's' or time == 'ss' or time == 'sec' or time == 'second' or time == 'seconds':
+            return int(tuple(self.start_time.split(':'))[2])
 
     def get_end_time(self, time=0):
         """
-        Converts total_time time<str> to hour<int>, min<int>, sec<int>
-        :param time: type of data to return (hour, min, sec)
-        :return: int
+        Converts end_time <str> to usable <int> format
+        :param time: type of time to return / all, hour, min, sec
+        :return: Tuple of <int> if 0, else <int>
         """
-        if time == 0 or time == 'h' or time == 'hh' or time == 'hrs' or time == 'hour' or time == 'hours':
-            return int(tuple(self.end.split(':'))[0])
-        if time == 1 or time == 'm' or time == 'mm' or time == 'min' or time == 'minute' or time == 'minutes':
-            return int(tuple(self.end.split(':'))[1])
-        if time == 2 or time == 's' or time == 'ss' or time == 'sec' or time == 'second' or time == 'seconds':
-            return int(tuple(self.end.split(':'))[2])
+        if time == 0:
+            return (int(tuple(self.end_time.split(':'))[0]), int(tuple(self.end_time.split(':'))[1]),
+                    int(tuple(self.end_time.split(':'))[2]))
+        # below is redundant due to tuple above but kept for legacy support
+        if time == 1 or time == 'h' or time == 'hh' or time == 'hrs' or time == 'hour' or time == 'hours':
+            return int(tuple(self.end_time.split(':'))[0])
+        if time == 2 or time == 'm' or time == 'mm' or time == 'min' or time == 'minute' or time == 'minutes':
+            return int(tuple(self.end_time.split(':'))[1])
+        if time == 3 or time == 's' or time == 'ss' or time == 'sec' or time == 'second' or time == 'seconds':
+            return int(tuple(self.end_time.split(':'))[2])
 
     def get_total_time(self, time=0):
         """
-        Converts end_time time<str> to hour<int>, min<int>, sec<int>
-        :param time: type of data to return (hour, min, sec)
-        :return: int
+        Converts total_time <str> to usable <int> format
+        :param time: type of time to return / all, hour, min, sec
+        :return: Tuple of <int> if 0, else <int>
         """
-        if time == 0 or time == 'h' or time == 'hh' or time == 'hrs' or time == 'hour' or time == 'hours':
-            return int(tuple(self.total.split(':'))[0])
-        if time == 1 or time == 'm' or time == 'mm' or time == 'min' or time == 'minute' or time == 'minutes':
-            return int(tuple(self.total.split(':'))[1])
-        if time == 2 or time == 's' or time == 'ss' or time == 'sec' or time == 'second' or time == 'seconds':
-            return int(tuple(self.total.split(':'))[2])
+        if time == 0:
+            return (int(tuple(self.total_time.split(':'))[0]), int(tuple(self.total_time.split(':'))[1]),
+                    int(tuple(self.total_time.split(':'))[2]))
+        # below is redundant due to tuple above but kept for legacy support
+        if time == 1 or time == 'h' or time == 'hh' or time == 'hrs' or time == 'hour' or time == 'hours':
+            return int(tuple(self.total_time.split(':'))[0])
+        if time == 2 or time == 'm' or time == 'mm' or time == 'min' or time == 'minute' or time == 'minutes':
+            return int(tuple(self.total_time.split(':'))[1])
+        if time == 3 or time == 's' or time == 'ss' or time == 'sec' or time == 'second' or time == 'seconds':
+            return int(tuple(self.total_time.split(':'))[2])
+        
 
-    def get_name(self):
+    def get_gmt_time(self, time_frame, gmt):
+        # TODO: create a method for converting utc to specified gmt
         """
-        Cleans up user_name from Data-frame incase it's been formated incorrectly
-        :return: string
+        Converts raw UTC time stamp (start or end) time to user specified GMT
+        :param time_frame: 0 or 'start'(start_time), 1 or 'end'(end_time)
+        :param gmt: -8 <int>
+        :return: tuple of<int> - (hh, mm, ss)
         """
-        return self.name.title()
+        pass
+        return None
 
 
 def parse_csv(csv_file):
@@ -135,7 +154,6 @@ usr01 = UserData(log_entries[1][0], log_entries[1][1], log_entries[1][2],
                  log_entries[1][6])
 
 print(usr00.name, type(usr00.name))
-print(usr00.user, type(usr00.user))
 print(usr00.month, type(usr00.month))
-print(usr00.get_start_time(), type(usr00.get_start_time()))
-print(usr00.get_total_time('second'), type(usr00.get_total_time('s')))
+print(usr00.start, type(usr00.start))
+print(usr00.total[2], type(usr00.total[2]))
