@@ -6,15 +6,57 @@ class UserData:
         # raw data frames
         self.name = user_name
         self.reserved = reserved
-        self.date = use_date
         self.comp = comp_name
-
-        # sugar for data class
-        self.day = self.get_day(1)
-        self.month = self.get_month(1)
 
         # sub-classes
         self.time = self.Time(start_time, end_time, total_time)
+        self.date = self.Date(use_date)
+
+    class Date:
+        def __init__(self, use_date):
+            # raw data frames
+            self.full = use_date
+
+            # sugar for data sub-class
+            self.day = self.get_day(1)
+            self.month = self.get_month(1)
+
+        def get_day(self, date_format=0):
+            """
+            Converts date string to day of the week
+            :param date_format: 0 - default <int>, 1 - full <str>, 2 - Three letter <str>
+            :return: day of the week
+            """
+            if date_format == 0:  # default value
+                return calendar.weekday(int(tuple(self.full.split('/'))[2]), int(tuple(self.full.split('/'))[1]),
+                                        int(tuple(self.full.split('/'))[0]))
+            if date_format == 1:
+                day = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+                return day[calendar.weekday(int(tuple(self.full.split('/'))[2]), int(tuple(self.full.split('/'))[1]),
+                                            int(tuple(self.full.split('/'))[0]))]
+            if date_format == 2:
+                day = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                return day[calendar.weekday(int(tuple(self.full.split('/'))[2]), int(tuple(self.full.split('/'))[1]),
+                                            int(tuple(self.full.split('/'))[0]))]
+
+        def get_month(self, date_format=0):
+            """
+            Converts date string to month<str>
+            :param date_format: 0 - default <int>, 1 - full <str>, 2 - Three letter <str>
+            :return: month value starting at 0/January
+            """
+            if date_format == 0:
+                return int(tuple(self.full.split('/'))[1]) - 1
+
+            if date_format == 1:
+                month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+                         'October', 'November', 'December']
+                return month[int(tuple(self.full.split('/'))[1]) - 1]
+
+            if date_format == 2:
+                month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+                         'Oct', 'Nov', 'Dec']
+                return month[int(tuple(self.full.split('/'))[1]) - 1]
 
     class Time:
         def __init__(self, start_time, end_time, total_time):
@@ -27,6 +69,8 @@ class UserData:
             self.start = self.get_start_time()
             self.end = self.get_end_time()
             self.total = self.get_total_time()
+
+
 
         def get_start_time(self, time=0):
             """
@@ -79,42 +123,6 @@ class UserData:
             if time == 3 or time == 's' or time == 'ss' or time == 'sec' or time == 'second' or time == 'seconds':
                 return int(tuple(self.total_time.split(':'))[2])
 
-    def get_day(self, date_format=0):
-        """
-        Converts date string to day of the week
-        :param date_format: 0 - default <int>, 1 - full <str>, 2 - Three letter <str>
-        :return: day of the week
-        """
-        if date_format == 0:  # default value
-            return calendar.weekday(int(tuple(self.date.split('/'))[2]), int(tuple(self.date.split('/'))[1]),
-                                    int(tuple(self.date.split('/'))[0]))
-        if date_format == 1:
-            day = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-            return day[calendar.weekday(int(tuple(self.date.split('/'))[2]), int(tuple(self.date.split('/'))[1]),
-                                        int(tuple(self.date.split('/'))[0]))]
-        if date_format == 2:
-            day = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-            return day[calendar.weekday(int(tuple(self.date.split('/'))[2]), int(tuple(self.date.split('/'))[1]),
-                                        int(tuple(self.date.split('/'))[0]))]
-
-    def get_month(self, date_format=0):
-        """
-        Converts date string to month<str>
-        :param date_format: 0 - default <int>, 1 - full <str>, 2 - Three letter <str>
-        :return: month value starting at 0/January
-        """
-        if date_format == 0:
-            return int(tuple(self.date.split('/'))[1]) - 1
-
-        if date_format == 1:
-            month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
-                     'October', 'November', 'December']
-            return month[int(tuple(self.date.split('/'))[1]) - 1]
-
-        if date_format == 2:
-            month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
-                     'Oct', 'Nov', 'Dec']
-            return month[int(tuple(self.date.split('/'))[1]) - 1]
 
 def parse_csv(csv_file):
     """
@@ -134,7 +142,7 @@ def parse_csv(csv_file):
 # place csv data into a variable
 log_entries = parse_csv('test.csv')
 
-# print debug
+# print log_entry list
 for i in range(len(log_entries)):
     print(log_entries[i])
 
@@ -152,3 +160,4 @@ usr01 = UserData(log_entries[1][0], log_entries[1][1], log_entries[1][2],
 print(usr00.time.start, type(usr00.time.start))
 print(usr00.time.end, type(usr00.time.end))
 print(usr00.time.total, type(usr00.time.total))
+print(usr00.date.month)
