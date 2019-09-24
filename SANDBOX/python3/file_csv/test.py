@@ -66,11 +66,39 @@ class UserData:
             self.total_time = total_time
 
             # sugar for data sub-class
-            self.start = self.get_start_time()
-            self.end = self.get_end_time()
-            self.total = self.get_total_time()
+            self.end = self.End(self.get_end_time())
+            self.start = self.Start(self.get_start_time())
+            self.total = self.Total(self.get_total_time())
 
+        # TODO: split data_frame tuple<list> into objects
+        class Data:
+            def __init__(self, data_frame):
+                # sugar for data sub-sub-class
+                self.hour = data_frame[0]
+                self.minute = data_frame[1]
+                self.second = data_frame[2]
 
+        class Methods:
+            def gmt(self, gmt=0):
+                """
+                Converts time in UTC with a GMT offset as a <str>
+                :param gmt:
+                :return: UTC or the converted GMT equivalent
+                """
+                if gmt == 0:  # default
+                    return "{}:{}:{}".format(self.hour, self.minute, self.second)
+                else:
+                    # TODO: test the logic for this gmt converter
+                    return "{}:{}:{}".format((self.hour + gmt) % 24, self.minute, self.second)
+
+        class Start(Data, Methods):
+            pass
+
+        class End(Data, Methods):
+            pass
+
+        class Total(Data):
+            pass
 
         def get_start_time(self, time=0):
             """
@@ -157,7 +185,7 @@ usr01 = UserData(log_entries[1][0], log_entries[1][1], log_entries[1][2],
                  log_entries[1][3], log_entries[1][4], log_entries[1][5],
                  log_entries[1][6])
 
-print(usr00.time.start, type(usr00.time.start))
-print(usr00.time.end, type(usr00.time.end))
-print(usr00.time.total, type(usr00.time.total))
-print(usr00.date.month)
+print(usr00.time.start.gmt(-5), type(usr00.time.start.gmt(-5)))
+print(usr00.time.start.hour, type(usr00.time.start.hour))
+print(usr00.time.start.minute, type(usr00.time.start.minute))
+print(usr00.time.total.second)
